@@ -1,0 +1,46 @@
+
+//mixins with parameters
+@mixin  flexCenter($direction, $background)  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    flex-direction: $direction;
+    background:$background;
+    
+}
+
+//nested styles
+header {
+   
+    color:$textColor;
+    @include flexCenter(column, $textColor); //use mixin parameters
+
+    button {
+        // add states to class/div
+        &:hover{
+            background:$primaryBTN;
+
+        }
+        &::after{
+            content:'hello';
+
+        }
+    }
+}
+
+//extensions - duplicating whole styles
+.contact{
+    @extend header;
+    //overide
+    background: #000;
+
+    //calculations
+    width: 100% - 20%;
+}
+
+
+
+
+
+
