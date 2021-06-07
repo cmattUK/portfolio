@@ -88,6 +88,10 @@ a:hover{
 .my-work h2{
   font-size: 600%;
 }
+
+.my-work img{
+  transition: transform .5s;
+}
 .my-work img:hover{
   transform:scale(1.1);
 }
